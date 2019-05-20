@@ -36,6 +36,8 @@ export { PostActions }
 export default PostActions
 
 const CONTAINER: ViewStyle = {
+	borderTopWidth: 1,
+	borderTopColor: 'grey',
 	flexDirection: 'row',
 	borderBottomWidth: 1,
 	borderBottomColor: 'grey'
