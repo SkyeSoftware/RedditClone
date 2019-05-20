@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, ViewStyle } from 'react-native'
 import { RootState } from '../../redux/RootState'
 import PostsActions from '../../redux/posts'
 import { connect } from 'react-redux'
@@ -7,6 +7,8 @@ import { NavigationScreenProps } from 'react-navigation'
 import { AsyncStatus } from '../../redux/Async'
 import Post from '../../typings/Post'
 import HomeView from './HomeView'
+import { Icon } from 'native-base'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 export interface HomeScreenProps extends NavigationScreenProps {
 	posts: {
@@ -19,9 +21,14 @@ export interface HomeScreenProps extends NavigationScreenProps {
 }
 
 class HomeScreen extends React.Component<HomeScreenProps, {}> {
-	static navigationOptions = () => {
+	static navigationOptions = ({ navigation }) => {
 		return {
-			title: 'ReddicClone'
+			title: 'ReddicClone',
+			headerLeft: () => (
+				<TouchableOpacity style={HAMBURGER_ICON_CONTAINER} activeOpacity={0.99} onPress={navigation.openDrawer}>
+					<Icon name="menu" />
+				</TouchableOpacity>
+			)
 		}
 	}
 	componentDidMount() {
@@ -54,3 +61,10 @@ const mapDispatchToProps = {
 
 export { HomeScreen }
 export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen)
+
+const HAMBURGER_ICON_CONTAINER: ViewStyle = {
+	width: 50,
+	height: '100%',
+	alignItems: 'center',
+	justifyContent: 'center'
+}
