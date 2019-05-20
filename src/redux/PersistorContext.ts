@@ -1,4 +1,4 @@
-import { createContext } from 'react';
-import { Persistor } from 'redux-persist';
+import { createContext } from 'react'
+import { Persistor } from 'redux-persist'
 
-export default createContext<Persistor>(null);
+export default createContext<Persistor>(null)

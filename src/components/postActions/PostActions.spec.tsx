@@ -19,33 +19,33 @@ describe('DeckListItem', () => {
 		const component = shallow(<PostActions {...props} />)
 		const buttons = component.find(TouchableScale)
 		expect(buttons).toHaveLength(4)
-  })
-  
-  test('onCommentPressed should be called after tap', () => {
-    const component = shallow(<PostActions {...props} />)
-    const button = component.find({ testID: 'comment'})
-    button.simulate('press')
-    expect(props.onCommentPressed).toHaveBeenCalled()
-  })
+	})
 
-  test('onSharePressed should be called after tap', () => {
-    const component = shallow(<PostActions {...props} />)
-    const button = component.find({ testID: 'share'})
-    button.simulate('press')
-    expect(props.onSharePressed).toHaveBeenCalled()
-  })
+	test('onCommentPressed should be called after tap', () => {
+		const component = shallow(<PostActions {...props} />)
+		const button = component.find({ testID: 'comment' })
+		button.simulate('press')
+		expect(props.onCommentPressed).toHaveBeenCalled()
+	})
 
-  test('onUpvotePressed should be called after tap', () => {
-    const component = shallow(<PostActions {...props} />)
-    const button = component.find({ testID: 'thumbsUp'})
-    button.simulate('press')
-    expect(props.onUpvotePressed).toHaveBeenCalled()
-  })
+	test('onSharePressed should be called after tap', () => {
+		const component = shallow(<PostActions {...props} />)
+		const button = component.find({ testID: 'share' })
+		button.simulate('press')
+		expect(props.onSharePressed).toHaveBeenCalled()
+	})
 
-  test('onDownvotePressed should be called after tap', () => {
-    const component = shallow(<PostActions {...props} />)
-    const button = component.find({ testID: 'thumbsDown'})
-    button.simulate('press')
-    expect(props.onDownvotePressed).toHaveBeenCalled()
-  })
+	test('onUpvotePressed should be called after tap', () => {
+		const component = shallow(<PostActions {...props} />)
+		const button = component.find({ testID: 'thumbsUp' })
+		button.simulate('press')
+		expect(props.onUpvotePressed).toHaveBeenCalled()
+	})
+
+	test('onDownvotePressed should be called after tap', () => {
+		const component = shallow(<PostActions {...props} />)
+		const button = component.find({ testID: 'thumbsDown' })
+		button.simulate('press')
+		expect(props.onDownvotePressed).toHaveBeenCalled()
+	})
 })

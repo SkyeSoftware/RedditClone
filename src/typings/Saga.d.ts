@@ -1,6 +1,6 @@
-import { AnyAction } from 'redux';
-import API from '../api/Api';
+import { AnyAction } from 'redux'
+import API from '../api/Api'
 
-type Saga = (api: API, action: AnyAction, ...params: any[]) => Iterator<any>;
+type Saga = (api: API, action: AnyAction, ...params: any[]) => Iterator<any>
 
-export default Saga;
+export default Saga

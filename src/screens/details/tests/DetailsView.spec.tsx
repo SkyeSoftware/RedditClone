@@ -21,9 +21,9 @@ describe('DeckListItem', () => {
 	test('Should render header', () => {
 		const component = shallow(<DetailsView {...props} />)
 		expect(component.find({ testID: 'header' })).toHaveLength(1)
-  })
-  
-  test('Header should display correct text', () => {
+	})
+
+	test('Header should display correct text', () => {
 		const component = shallow(<DetailsView {...props} />)
 		expect(component.find({ testID: 'header' }).children().text()).toBe(props.post.title)
 	})

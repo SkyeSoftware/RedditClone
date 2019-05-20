@@ -3,10 +3,10 @@ import { persistReducer, PersistConfig } from 'redux-persist'
 import { pick, mergeDeepLeft } from 'ramda'
 
 import { RootState } from './RootState'
-import { reducer as PostsReducer } from './posts';
+import { reducer as PostsReducer } from './posts'
 
 const CommonReducers = {
-  posts: PostsReducer
+	posts: PostsReducer
 }
 
 function baseReducer(state: RootState, action: AnyAction) {

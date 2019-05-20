@@ -1,7 +1,7 @@
-import { StateType as PostsStateType } from './posts/State';
+import { StateType as PostsStateType } from './posts/State'
 
 interface RootStateDefinition {
-  posts: PostsStateType
+	posts: PostsStateType
 }
 
 export type RootState = Readonly<RootStateDefinition>

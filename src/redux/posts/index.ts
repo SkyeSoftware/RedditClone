@@ -15,10 +15,7 @@ export const reducer = createReducer(InitialState, {
 
 /* ----------------- reducers --------------------- */
 
-function getPostsSuccess(
-	state: StateType['getPosts'],
-	action: GetPostsSuccessAction
-): Partial<StateType['getPosts']> {
+function getPostsSuccess(state: StateType['getPosts'], action: GetPostsSuccessAction): Partial<StateType['getPosts']> {
 	return {
 		list: action.payload.posts,
 		total: action.payload.posts.length

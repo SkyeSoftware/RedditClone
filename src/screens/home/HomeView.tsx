@@ -15,6 +15,7 @@ class HomeView extends React.Component<HomeViewProps, {}> {
 		return (
 			<View>
 				<FlatList
+					refreshing={this.props.status === AsyncStatus.Pending}
 					testID="postsList"
 					keyExtractor={this.keyExtractor}
 					data={this.props.posts}
@@ -25,11 +26,11 @@ class HomeView extends React.Component<HomeViewProps, {}> {
 		)
 	}
 
-	keyExtractor = (item, index) => index.toString()
+	keyExtractor = (item: Post, index: number) => index.toString()
 
 	renderItem = ({ item, index }) => (
 		<PostListItem
-      id={item.id}
+			id={item.id}
 			author={item.author}
 			title={item.title}
 			image={item.image}
