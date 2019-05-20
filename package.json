@@ -1,0 +1,66 @@
+{
+  "name": "RedditClone",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "lint": "tslint 'src/**/*.{ts,tsx}'",
+    "test": "jest"
+  },
+  "dependencies": {
+    "apisauce": "^0.16.0",
+    "moment": "^2.24.0",
+    "native-base": "^2.12.1",
+    "ramda": "^0.25.0",
+    "react": "16.8.3",
+    "react-native": "0.59.8",
+    "react-native-gesture-handler": "^1.2.1",
+    "react-navigation": "^3.11.0",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-persist": "^5.10.0",
+    "redux-saga": "^0.16.0",
+    "reduxsauce": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/runtime": "^7.4.4",
+    "@types/enzyme": "^3.1.14",
+    "@types/enzyme-adapter-react-16": "^1.0.3",
+    "@types/jest": "^23.3.5",
+    "@types/ramda": "^0.25.39",
+    "@types/react": "^16.4.11",
+    "@types/react-native": "^0.56.12",
+    "@types/react-navigation": "3.0.7",
+    "@types/react-redux": "^6.0.9",
+    "@types/react-test-renderer": "^16.0.2",
+    "@types/redux-persist": "^4.3.1",
+    "babel-jest": "^24.8.0",
+    "enzyme": "3.7.0",
+    "enzyme-adapter-react-16": "1.6.0",
+    "eslint-config-prettier": "3.3.0",
+    "eslint-config-standard": "12.0.0",
+    "eslint-plugin-prettier": "3.0.0",
+    "jest": "^24.8.0",
+    "metro-react-native-babel-preset": "^0.54.1",
+    "prettier": "1.16.1",
+    "react-dom": "^16.8.6",
+    "react-test-renderer": "16.8.3",
+    "ts-jest": "^23.1.4",
+    "ts-lint": "4.5.1",
+    "tslint": "5.11.0",
+    "tslint-config-prettier": "1.15.0",
+    "tslint-plugin-prettier": "2.0.1",
+    "tslint-react": "3.6.0",
+    "typescript": "^3.0.1"
+  },
+  "jest": {
+    "preset": "react-native",
+    "transformIgnorePatterns": [
+      "/node_modules/(?!native-base)/"
+    ],
+    "setupFiles": [
+      "<rootDir>/jest.setup.ts"
+    ]
+  }
+}
