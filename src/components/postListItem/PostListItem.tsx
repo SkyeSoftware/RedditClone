@@ -2,8 +2,10 @@ import * as React from 'react'
 import { View, Text, Image, ImageStyle, TextStyle, ViewStyle, Dimensions } from 'react-native'
 import { Card, CardItem, Body, Left, Icon, Right } from 'native-base'
 import moment from 'moment'
+import TouchableScale from 'react-native-touchable-scale'
 
 export interface PostListItemProps {
+	id: string
 	author: string
 	title: string
 	image: string
@@ -12,6 +14,7 @@ export interface PostListItemProps {
 	createdAt: number
 	score: number
 	commentsCount: number
+	onPostPressed: () => void
 }
 
 const window = Dimensions.get('window')
@@ -33,7 +36,7 @@ class PostListItem extends React.PureComponent<PostListItemProps, {}> {
 		const { image, title } = this.props
 		moment.locale('pl')
 		return (
-			<View>
+			<TouchableScale onPress={this.props.onPostPressed} activeScale={0.9}>
 				<Card>
 					<CardItem>
 						<Left>
@@ -73,7 +76,7 @@ class PostListItem extends React.PureComponent<PostListItemProps, {}> {
 						</Right>
 					</CardItem>
 				</Card>
-			</View>
+			</TouchableScale>
 		)
 	}
 }
@@ -83,9 +86,6 @@ export { PostListItem }
 export default PostListItem
 
 const IMAGE_STYLE: ImageStyle = {
-	width: '100%',
-	// height: 400,
-
 	resizeMode: 'cover'
 }
 
@@ -96,12 +96,6 @@ const STAT_LABEL: TextStyle = {
 const ICON_STYLE: TextStyle = {
 	fontSize: 18,
 	margin: 4
-}
-
-const LIKES_CONTAINER: ViewStyle = {
-	width: 70,
-	alignItems: 'center',
-	justifyContent: 'center'
 }
 
 const STAT_CONTAINER: ViewStyle = {

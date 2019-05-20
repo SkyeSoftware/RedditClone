@@ -11,7 +11,8 @@ describe('DeckListItem', () => {
 	beforeAll(() => {
 		props = {
 			posts: [ post, post ],
-			status: AsyncStatus.Init
+			status: AsyncStatus.Init,
+			onPostPressed: jest.fn()
 		}
 	})
 

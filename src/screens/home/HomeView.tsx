@@ -5,6 +5,7 @@ import { View, FlatList } from 'react-native'
 import PostListItem from '../../components/postListItem/PostListItem'
 
 export interface HomeViewProps {
+	onPostPressed: (post: Post) => void
 	posts: Post[]
 	status: AsyncStatus
 }
@@ -28,6 +29,7 @@ class HomeView extends React.Component<HomeViewProps, {}> {
 
 	renderItem = ({ item, index }) => (
 		<PostListItem
+      id={item.id}
 			author={item.author}
 			title={item.title}
 			image={item.image}
@@ -36,6 +38,7 @@ class HomeView extends React.Component<HomeViewProps, {}> {
 			createdAt={item.created}
 			score={item.score}
 			commentsCount={item.comments}
+			onPostPressed={() => this.props.onPostPressed(item)}
 		/>
 	)
 }

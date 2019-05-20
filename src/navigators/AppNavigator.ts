@@ -1,6 +1,7 @@
 import { createStackNavigator, createAppContainer, createSwitchNavigator } from 'react-navigation'
 import HomeScreen from '../screens/home/HomeScreen'
 import SplashScreen from '../screens/splash/SplashScreen'
+import DetailsScreen from '../screens/details/DetailsScreen';
 
 const SplashStack = createStackNavigator(
 	{
@@ -13,7 +14,8 @@ const SplashStack = createStackNavigator(
 )
 
 const AppStack = createStackNavigator({
-	home: { screen: HomeScreen }
+  home: { screen: HomeScreen },
+  details: { screen: DetailsScreen }
 })
 
 const RootNavigator = createSwitchNavigator({

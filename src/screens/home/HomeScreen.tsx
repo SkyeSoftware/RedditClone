@@ -11,7 +11,7 @@ import HomeView from './HomeView'
 export interface HomeScreenProps extends NavigationScreenProps {
 	posts: {
 		__status: AsyncStatus
-		__error: {}
+		__error: null
 		list: Post[]
 		total: number
 	}
@@ -19,6 +19,11 @@ export interface HomeScreenProps extends NavigationScreenProps {
 }
 
 class HomeScreen extends React.Component<HomeScreenProps, {}> {
+	static navigationOptions = () => {
+		return {
+			title: 'ReddicClone'
+		}
+	}
 	componentDidMount() {
 		this.props.fetchPosts()
 	}
@@ -26,10 +31,17 @@ class HomeScreen extends React.Component<HomeScreenProps, {}> {
 	render() {
 		return (
 			<View>
-				<HomeView posts={this.props.posts.list} status={this.props.posts.__status} />
+				<HomeView
+					posts={this.props.posts.list}
+					status={this.props.posts.__status}
+					onPostPressed={this.onPostPressed}
+				/>
 			</View>
 		)
 	}
+
+	onPostPressed = (post: Post) =>
+		this.props.navigation.navigate({ routeName: 'details', key: 'details', params: { post } })
 }
 
 const mapStateToProps = (state: RootState) => ({

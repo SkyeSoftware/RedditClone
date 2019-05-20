@@ -4,10 +4,11 @@ import { shallow } from 'enzyme'
 import { PostListItem, PostListItemProps } from './PostListItem'
 import { Text } from 'react-native';
 
-describe('DeckListItem', () => {
+describe('PostListItem', () => {
   let props: PostListItemProps;
   beforeAll(() => {
       props = {
+        id: "01",
         commentsCount: 5,
         score: 10,
         author: 'CoolBoy',
