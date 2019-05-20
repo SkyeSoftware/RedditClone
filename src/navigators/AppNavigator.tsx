@@ -10,6 +10,7 @@ import SplashScreen from '../screens/splash/SplashScreen'
 import DetailsScreen from '../screens/details/DetailsScreen'
 import { Dimensions, Image } from 'react-native'
 import { Icon } from 'native-base'
+import DrawerContent from './DrawerContent';
 
 const SplashStack = createStackNavigator(
 	{
@@ -32,7 +33,8 @@ const DrawerStack = createDrawerNavigator(
 	},
 	{
 		drawerWidth: Dimensions.get('screen').width,
-		drawerPosition: 'left'
+		drawerPosition: 'left',
+		contentComponent: DrawerContent
 	}
 )
 
