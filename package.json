@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "apisauce": "^0.16.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "native-base": "^2.12.1",
     "ramda": "^0.25.0",
     "react": "16.8.3",
